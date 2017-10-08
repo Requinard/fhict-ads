@@ -1,0 +1,15 @@
+version: '3'
+services:
+  cloudera:
+    image: "cloudera/quickstart"
+    hostname: "quickstart.cloudera"
+    command: /usr/bin/docker-quickstart
+    tty: true
+    ports:
+      - "8888:8888"
+      - "8080:8080"
+      - "7180:7180"
+    volumes:
+      - cloudera-data:/user/cloudera 
+volumes:
+  cloudera-data:
